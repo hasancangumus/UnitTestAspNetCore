@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestXUnitAspNetCore.App", "UnitTestAspNetCore.App\UnitTestXUnitAspNetCore.App.csproj", "{8FF1E34F-B492-4B21-A9A7-3DD6724D02B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestXUnitAspNetCore.Test", "UnitTestAspNetCore.Test\UnitTestXUnitAspNetCore.Test.csproj", "{67807893-DC49-4439-B14A-0477BA5E408D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FF1E34F-B492-4B21-A9A7-3DD6724D02B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF1E34F-B492-4B21-A9A7-3DD6724D02B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF1E34F-B492-4B21-A9A7-3DD6724D02B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF1E34F-B492-4B21-A9A7-3DD6724D02B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67807893-DC49-4439-B14A-0477BA5E408D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67807893-DC49-4439-B14A-0477BA5E408D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67807893-DC49-4439-B14A-0477BA5E408D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67807893-DC49-4439-B14A-0477BA5E408D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E88CBCB-6B40-4808-B5B7-4A82F20559DC}
+	EndGlobalSection
+EndGlobal
