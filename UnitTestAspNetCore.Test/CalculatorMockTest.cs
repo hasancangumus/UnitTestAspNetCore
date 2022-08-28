@@ -52,5 +52,17 @@ namespace UnitTestXUnitAspNetCore.Test
             _mock.Verify(x => x.Divide(firstParam, secondParam), Times.Never);
         }
 
+        [Theory]
+        [InlineData(1, 2, 0)]
+        [InlineData(5, 7, 0)]
+        [InlineData(10, 19, 0)]
+        public void SumMockTestWithParameterSetupIncludesCallback(int firstParam, int secondParam, int expectedParam)
+        {
+            int actualSum = 0;
+            _mock.Setup(x => x.Sum(It.IsAny<int>(), It.IsAny<int>()))
+                .Callback<int, int>((x, y) => actualSum = x + y);
+            
+            Assert.Equal(expectedParam, actualSum);
+        }
     }
 }
