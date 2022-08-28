@@ -28,6 +28,29 @@ namespace UnitTestXUnitAspNetCore.Test
             Assert.Equal(expectedParam, actualData);
         }
 
+        [Theory]
+        [InlineData(1, 2, 0)]
+        [InlineData(5, 7, 0)]
+        [InlineData(10, 19, 0)]
+        public void SumMockTestWithParameterVerifyTimesOnce(int firstParam, int secondParam, int expectedParam)
+        {
+            _mock.Setup(x => x.Sum(firstParam, secondParam)).Returns(0);
+            int actualData = _calculator.Sum(firstParam, secondParam);
+
+            _mock.Verify(x => x.Sum(firstParam, secondParam), Times.Once);  
+        }
+
+        [Theory]
+        [InlineData(1, 2, 0)]
+        [InlineData(5, 7, 0)]
+        [InlineData(10, 19, 0)]
+        public void SumMockTestWithParameterVerifyDivideTimesNever(int firstParam, int secondParam, int expectedParam)
+        {
+            _mock.Setup(x => x.Sum(firstParam, secondParam)).Returns(0);
+            int actualData = _calculator.Sum(firstParam, secondParam);
+
+            _mock.Verify(x => x.Divide(firstParam, secondParam), Times.Never);
+        }
 
     }
 }
