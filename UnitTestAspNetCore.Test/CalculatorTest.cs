@@ -4,12 +4,11 @@ namespace UnitTestXUnitAspNetCore.Test
 {
     public class CalculatorTest
     {
-        private Calculator calculator { get; set; }
+        private Calculator _calculator { get; set; }
         public CalculatorTest()
         {
-            calculator = new Calculator();
+            _calculator = new Calculator(new CalculatorService());
         }
-
 
         [Fact]
         public void SumTestWithoutParameter()
@@ -19,7 +18,7 @@ namespace UnitTestXUnitAspNetCore.Test
             int b = 20;
 
             //Act
-            var total = calculator.Sum(a, b);
+            var total = _calculator.Sum(a, b);
 
             //Assert
             Assert.Equal<int>(25, total);
@@ -31,7 +30,7 @@ namespace UnitTestXUnitAspNetCore.Test
         [InlineData(10, 19, 29)]
         public void SumTestWithParameter(int firstParam, int secondParam, int expectedParam)
         {
-            int actualData = calculator.Sum(firstParam, secondParam);
+            int actualData = _calculator.Sum(firstParam, secondParam);
 
             Assert.Equal(expectedParam, actualData);
         }
@@ -41,7 +40,7 @@ namespace UnitTestXUnitAspNetCore.Test
         [InlineData(55, 5, 11)]
         public void Divide_SimpleValues_ReturnQuotient(int firstParam, int secondParam, int expectedParam)
         {
-            int actualData = calculator.Divide(firstParam, secondParam);
+            int actualData = _calculator.Divide(firstParam, secondParam);
 
             Assert.Equal(expectedParam, actualData);
         }
@@ -50,7 +49,9 @@ namespace UnitTestXUnitAspNetCore.Test
         [InlineData(5, 0)]
         public void Divide_SecondValueIsZero_ReturnDivideByZeroException(int firstParam, int secondParam)
         {
-            Assert.Throws<DivideByZeroException>(() => calculator.Divide(firstParam, secondParam));
+            Assert.Throws<DivideByZeroException>(() => _calculator.Divide(firstParam, secondParam));
         }
+
+
     }
 }
